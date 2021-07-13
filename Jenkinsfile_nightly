@@ -61,7 +61,7 @@ withNightlyPipeline(type, product, component) {
   env.DOCUMENT_MANAGEMENT_URL = 'http://dm-store-aat.service.core-compute-aat.internal'
 
   loadVaultSecrets(secrets)
-  //enableSecurityScan()
+  enableSecurityScan()
   enableSlackNotifications('#sscs-tech')
   enableFortifyScan()
   enableFullFunctionalTest()
