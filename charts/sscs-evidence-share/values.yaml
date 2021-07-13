@@ -27,6 +27,8 @@ java:
         - AppInsightsInstrumentationKey
         - ld-sdk-key
         - sendgrid-api-key
+        - fortify-on-demand-username
+        - fortify-on-demand-password
   environment:
     REFORM_TEAM: sscs
     REFORM_SERVICE_NAME: sscs-evidence-share

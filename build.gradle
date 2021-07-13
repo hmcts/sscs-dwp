@@ -86,6 +86,12 @@ task smoke(type: Test) {
   classpath = sourceSets.smokeTest.runtimeClasspath
 }
 
+task fortifyScan(type: JavaExec)  {
+  main = "uk.gov.hmcts.fortifyclient.FortifyClientMainApp"
+  classpath += sourceSets.test.runtimeClasspath
+  jvmArgs = ['--add-opens=java.base/java.lang.reflect=ALL-UNNAMED']
+}
+
 configurations {
   integrationTestCompile.extendsFrom(testCompile)
   integrationTestRuntime.extendsFrom(testRuntime)
@@ -93,7 +99,6 @@ configurations {
   e2eRuntime.extendsFrom(testRuntime)
   smokeTestCompile.extendsFrom(testCompile)
   smokeTestRuntime.extendsFrom(testRuntime)
-
   testCompile.exclude module: "android-json"
   testRuntime.exclude module: "android-json"
   integrationTestCompile.exclude module: "android-json"
@@ -296,6 +301,7 @@ dependencies {
 
   testImplementation libraries.junit5
   testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+  testCompile 'com.github.hmcts:fortify-client:1.0.1:all'
 
   testCompile 'pl.pragmatists:JUnitParams:1.1.1'
   testCompile group: 'org.mockito', name: 'mockito-core', version: '3.11.2'

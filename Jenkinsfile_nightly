@@ -40,6 +40,8 @@ def secrets = [
     secret('robotics-email-scottish-to', 'ROBOTICS_EMAIL_SCOTTISH_TO'),
     secret('robotics-email-pip-ae-to', 'ROBOTICS_EMAIL_PIP_AE_TO'),
     secret('AppInsightsInstrumentationKey', 'APPINSIGHTS_INSTRUMENTATIONKEY'),
+    secret('fortify-on-demand-username','FORTIFY_USER_NAME'),
+    secret('fortify-on-demand-password','FORTIFY_PASSWORD')
   ]
 ]
 
@@ -59,7 +61,12 @@ withNightlyPipeline(type, product, component) {
   env.DOCUMENT_MANAGEMENT_URL = 'http://dm-store-aat.service.core-compute-aat.internal'
 
   loadVaultSecrets(secrets)
-  enableSecurityScan()
+  //enableSecurityScan()
   enableSlackNotifications('#sscs-tech')
+  enableFortifyScan()
   enableFullFunctionalTest()
+
+  after('fortify-scan') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/Fortify Scan/**/*'
+  }
 }
