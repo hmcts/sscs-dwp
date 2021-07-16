@@ -288,7 +288,7 @@ dependencies {
   compile group: 'com.github.hmcts', name: 'sscs-pdf-email-common', version: '1.4.38'
 
   //Remove when our dependencies pull in this version or later
-  compile 'com.fasterxml.jackson.core:jackson-databind:2.11.3'
+  compile 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
 
   compile 'com.launchdarkly:launchdarkly-java-server-sdk:5.6.1'
 
@@ -322,7 +322,7 @@ dependencies {
   contractTestRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.junit_jupiter
   contractTestImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: versions.junit_jupiter
   contractTestRuntime group: 'org.junit.platform', name: 'junit-platform-commons', version: '1.7.0'
-  contractTestImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.4'
+  contractTestImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.4'
   contractTestCompile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.4'
   contractTestImplementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '3.0.3'
   contractTestImplementation group: 'org.springframework.cloud', name: 'spring-cloud-netflix-ribbon', version: '2.2.9.RELEASE'
@@ -351,7 +351,7 @@ dependencyManagement {
 
     // solves CVE-2019-12086
     // remove once spring manager incorporates this changes
-    dependencySet(group: 'com.fasterxml.jackson.core', version: '2.11.3') {
+    dependencySet(group: 'com.fasterxml.jackson.core', version: '2.12.4') {
       entry 'jackson-core'
       entry 'jackson-databind'
     }
