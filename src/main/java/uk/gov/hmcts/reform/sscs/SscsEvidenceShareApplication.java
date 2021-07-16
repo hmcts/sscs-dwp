@@ -1,15 +1,10 @@
 package uk.gov.hmcts.reform.sscs;
 
-import feign.codec.Encoder;
-import feign.form.spring.SpringFormEncoder;
-import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.cloud.openfeign.support.SpringEncoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.retry.annotation.EnableRetry;
@@ -25,12 +20,11 @@ import uk.gov.hmcts.reform.sscs.ccd.config.CcdRequestDetails;
         "uk.gov.hmcts.reform.sscs.idam",
         "uk.gov.hmcts.reform.sscs.document",
         "uk.gov.hmcts.reform.ccd.client",
-        "uk.gov.hmcts.reform.idam",
-        "uk.gov.hmcts.reform.ccd.document.am.feign"
+        "uk.gov.hmcts.reform.idam"
     })
 @EnableRetry
 @ComponentScan(
-    basePackages = {"uk.gov.hmcts.reform.sscs", "uk.gov.hmcts.reform.ccd.document.am.feign"},
+    basePackages = {"uk.gov.hmcts.reform.sscs", "uk.gov.hmcts.reform.ccd.document.am"},
     basePackageClasses = SscsEvidenceShareApplication.class,
     lazyInit = true
 )
@@ -46,11 +40,6 @@ public class SscsEvidenceShareApplication {
             .caseTypeId(coreCaseDataCaseTypeId)
             .jurisdictionId(coreCaseDataJurisdictionId)
             .build();
-    }
-
-    @Bean
-    public Encoder feignFormEncoder(ObjectFactory<HttpMessageConverters> messageConverters) {
-        return new SpringFormEncoder(new SpringEncoder(messageConverters));
     }
 
     public static void main(final String[] args) {

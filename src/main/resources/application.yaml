@@ -8,6 +8,8 @@ management:
   endpoints:
     web:
       base-path: /
+  health:
+    case-document-am-api.enabled: ${SECURE_DOC_STORE_FEATURE:false}
 
 spring:
   application:
