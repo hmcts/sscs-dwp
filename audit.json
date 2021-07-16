@@ -1,9 +1,6 @@
 {
 
 "100001_Unexpected Content-Type was returned_http://sscs-evidence-share-aat.service.core-compute-aat.internal/_GET" : "ignore",
-"10054_Cookie Without SameSite Attribute_http://sscs-evidence-share-aat.service.core-compute-aat.internal/v2/api-docs_GET" : "ignore",
-"10054_Cookie Without SameSite Attribute_http://sscs-evidence-share-aat.service.core-compute-aat.internal/_GET" : "ignore",
-"10054_Cookie Without SameSite Attribute_http://sscs-evidence-share-aat.service.core-compute-aat.internal/send_POST" : "ignore",
 "90033_Loosely Scoped Cookie_http://sscs-evidence-share-aat.service.core-compute-aat.internal/_GET" : "ignore",
 "90033_Loosely Scoped Cookie_http://sscs-evidence-share-aat.service.core-compute-aat.internal/send_POST" : "ignore",
 "90033_Loosely Scoped Cookie_http://sscs-evidence-share-aat.service.core-compute-aat.internal/v2/api-docs_GET" : "ignore",
@@ -18,9 +15,6 @@
 "10096_Timestamp Disclosure - Unix_http://sscs-evidence-share-aat.service.core-compute-aat.internal/_GET" : "ignore",
 "10096_Timestamp Disclosure - Unix_http://sscs-evidence-share-aat.service.core-compute-aat.internal/send_POST" : "ignore",
 "10096_Timestamp Disclosure - Unix_http://sscs-evidence-share-aat.service.core-compute-aat.internal/v2/api-docs_GET" : "ignore",
-"10054_Cookie without SameSite Attribute_http://sscs-evidence-share-aat.service.core-compute-aat.internal/v2/api-docs_GET" : "ignore",
-"10054_Cookie without SameSite Attribute_http://sscs-evidence-share-aat.service.core-compute-aat.internal/send_POST" : "ignore",
-"10054_Cookie without SameSite Attribute_http://sscs-evidence-share-aat.service.core-compute-aat.internal/_GET" : "ignore"
 
 
 }
